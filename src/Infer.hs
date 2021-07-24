@@ -1,3 +1,0 @@
-
-module Infer where
-

@@ -4,11 +4,7 @@ dependencies:
   - mtl
   - containers
   - exceptions
-  - unification-fd
   - hashable
-  - data-fix
-  - free
-  - deriving-compat
   - generic-deriving
 
 default-extensions:
@@ -58,5 +54,3 @@ ghc-options: -Wall -freverse-errors
 library:
   source-dirs:
     - src
-
-

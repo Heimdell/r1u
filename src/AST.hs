@@ -2,17 +2,13 @@
 module AST where
 
 import Unifiable
-import Variable
 import Free
 
 import Data.Hashable
-import Data.Deriving
 import Data.String
 
 import GHC.Generics
 import Generics.Deriving.TH
-
-import Fix
 
 newtype Name  = Name  { unName :: String } deriving newtype (Eq, Ord, Show, Hashable, IsString)
 newtype KName = KName { unName :: String } deriving newtype (Eq, Ord, Show, Hashable, IsString)

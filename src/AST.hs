@@ -1,8 +1,9 @@
 
 module AST where
 
-import Control.Unification
-import Control.Monad.Free
+import Unifiable
+import Variable
+import Free
 
 import Data.Hashable
 import Data.Deriving
@@ -10,7 +11,7 @@ import Data.Deriving
 import GHC.Generics
 import Generics.Deriving.TH
 
-import Data.Fix
+import Fix
 
 newtype Name = Name { unName :: String }
   deriving newtype (Eq, Ord, Show, Hashable)
@@ -30,25 +31,20 @@ data Kind_ self
   | self :=> self
   deriving stock (Functor, Foldable, Traversable, Generic)
 
-deriveEq1 ''Type_
-deriveOrd1 ''Type_
-deriveShow1 ''Type_
 deriveAll1 ''Type_
 
 deriving stock instance Eq a => Eq (Type_ a)
 deriving stock instance Ord a => Ord (Type_ a)
 deriving stock instance Show a => Show (Type_ a)
 
-deriveEq1 ''Kind_
-deriveOrd1 ''Kind_
-deriveShow1 ''Kind_
 deriveAll1 ''Kind_
 
 deriving stock instance Eq a => Eq (Kind_ a)
 deriving stock instance Ord a => Ord (Kind_ a)
 deriving stock instance Show a => Show (Kind_ a)
 
-instance Variable Name where getVarID = hash
+instance Variable Name  where gensym i = Name  $ "a" ++ show i
+instance Variable KName where gensym i = KName $ "a" ++ show i
 deriving anyclass instance Unifiable Type_
 deriving anyclass instance Unifiable Kind_
 

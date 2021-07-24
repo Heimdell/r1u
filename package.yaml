@@ -1,0 +1,62 @@
+name: r1u
+dependencies:
+  - base
+  - mtl
+  - containers
+  - exceptions
+  - unification-fd
+  - hashable
+  - data-fix
+  - free
+  - deriving-compat
+  - generic-deriving
+
+default-extensions:
+  - AllowAmbiguousTypes
+  - ApplicativeDo
+  - BlockArguments
+  - ConstraintKinds
+  - DataKinds
+  - DeriveAnyClass
+  - DeriveFoldable
+  - DeriveFunctor
+  - DeriveGeneric
+  - DeriveTraversable
+  - DerivingStrategies
+  - DerivingVia
+  - DefaultSignatures
+  - DuplicateRecordFields
+  - EmptyCase
+  - FlexibleContexts
+  - FlexibleInstances
+  - FunctionalDependencies
+  - GADTs
+  - GeneralizedNewtypeDeriving
+  - ImportQualifiedPost
+  - KindSignatures
+  - LambdaCase
+  - MultiParamTypeClasses
+  - MultiWayIf
+  - NamedFieldPuns
+  - OverloadedStrings
+  - PatternSynonyms
+  - RankNTypes
+  - ScopedTypeVariables
+  - StandaloneDeriving
+  - TemplateHaskell
+  - TypeApplications
+  - TypeFamilies
+  - TypeOperators
+  - TypeSynonymInstances
+  - UndecidableInstances
+  - UnicodeSyntax
+  - ViewPatterns
+  - QuantifiedConstraints
+  - QuasiQuotes
+
+ghc-options: -Wall -freverse-errors
+library:
+  source-dirs:
+    - src
+
+
